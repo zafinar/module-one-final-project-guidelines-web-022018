@@ -1,9 +1,14 @@
-class Cli < ActiveRecord::Base 
-
+require 'pry'
+class Cli
 def initialize
+call
+end
+
+def call
   welcome
   input_check
 end
+
 
 def welcome
   puts "Welcome to the NYC 311 call search."
@@ -16,13 +21,16 @@ def input
 end
 
 def input_check
-  i = input
-  if i == "Address"
-  elsif i == "Incident"
+  i = input.downcase
+  if i == "address"
+  elsif i == "incident"
   else
   puts "I'm sorry I don't recognize that command."
+  call
   end
 end
 
-
 end
+# Cli.new
+# binding.pry
+# puts "lol"
