@@ -1,11 +1,8 @@
-class Cli
+class Cli < ActiveRecord::Base 
 
 def initialize
   welcome
-  input
-  input_check 
-
-
+  input_check
 end
 
 def welcome
@@ -19,8 +16,9 @@ def input
 end
 
 def input_check
-  if input == "Address"
-  elsif input == "Incident"
+  i = input
+  if i == "Address"
+  elsif i == "Incident"
   else
   puts "I'm sorry I don't recognize that command."
   end
@@ -28,5 +26,3 @@ end
 
 
 end
-
-Cli.new

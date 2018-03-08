@@ -1,6 +1,5 @@
-require_relative "incident_address.rb"
-require_relative "api.rb"
 
+# 
 
 
  # def call_api
