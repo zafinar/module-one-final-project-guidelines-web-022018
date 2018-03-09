@@ -55,12 +55,13 @@ class Api
 
         end
       end
-
+        #join table needs to be 3 way, descriptor needs to be independent class.
       def create_join_table
         join.each do |i|
-          c = Complaint.create(i.except(:incident_address,:incident_zip,:cross_street_1,:cross_street_2,:borough,:city,:location_type,:address_type,:street_name))
+          c = Complaint.find_or_create_by(complaint_type: i[:complaint_type])
           a = Address.find_or_create_by(incident_address:  i[:incident_address])
-          ComplaintAddress.create(address_id: a.id, complaint_id: c.id)
+          # c = Descriptor.create(i.except(:incident_address,:incident_zip,:cross_street_1,:cross_street_2,:borough,:city,:location_type,:address_type,:street_name))
+          ComplaintAddress.create(address_id: a.id, complaint_id: c.id, i[:descriptor])
 
 
         end
@@ -78,8 +79,6 @@ end
   #     i.map{|key,value| key}}.flatten
   #   api_array.uniq!
   # end
-
-
 
 
 

@@ -1,6 +1,8 @@
 require_relative '../config/environment.rb'
 require 'pry'
 api = Api.new
+api.create_join_table
+Cli.new
 
 # rake db:drop
 # rake db:migrate
@@ -30,7 +32,6 @@ api = Api.new
 # create_join_table(address,complaint)
 # create_address_table(address)
 # create_complaint_table(complaint)
-api.create_join_table
 
 # ct = ComplaintType.create(name: respose_hash.name, etc)
 #   ia = IncidentAddress.create(address: response_hash.address, etc)
@@ -38,4 +39,5 @@ api.create_join_table
 
 
 # binding.pry
+
 puts 'lol'
