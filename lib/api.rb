@@ -9,14 +9,6 @@ class Api
         # binding.pry
       end
 
-      def complaint_parameters
-
-      end
-
-      def address_parameters
-
-      end
-
       def complaint
         # complaint = {complaint_type: "",descriptor: ""}
         @call.map do |i|
@@ -25,8 +17,8 @@ class Api
             complaint_type: i["complaint_type"],
             descriptor: i["descriptor"]
           }
-          # end
-        end
+          end
+      
       end
 
       def address

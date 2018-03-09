@@ -12,26 +12,18 @@ def create_address_table(address)
   address.each {|i| Address.create(i)}
 end
 
-def create_join_table(address,complaint)
-  address = create_address_table(address)
-  complaint = create_complaint_table(complaint)
-  # address.each do |i|
-  #
-  # end
-  #
-  #     ComplaintAddress.create(i.id,e.id) if i.id == e.id
-  #
-  # end
-  # i = 0
-  # while i  < address.length
-  #   ComplaintAddress.create(address[i].id, complaint[i].id)
-  #   i += 1
-  # end
+def create_join_table
+  idx = 0
+  while idx < Complaint.all.length
+    ComplaintAddress.create({address_id: Address.all[idx].id, complaint_id: Complaint.all[idx].id})
+      idx +=1
+  end
 end
 
 # create_join_table(address,complaint)
-create_address_table(address)
-create_complaint_table(complaint)
+# create_address_table(address)
+# create_complaint_table(complaint)
+create_join_table
 
 # ct = ComplaintType.create(name: respose_hash.name, etc)
 #   ia = IncidentAddress.create(address: response_hash.address, etc)
