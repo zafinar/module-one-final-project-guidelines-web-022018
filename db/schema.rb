@@ -27,11 +27,11 @@ ActiveRecord::Schema.define(version: 20180308183459) do
   create_table "complaint_addresses", force: :cascade do |t|
     t.integer "address_id"
     t.integer "complaint_id"
+    t.string  "descriptor"
   end
 
   create_table "complaints", force: :cascade do |t|
     t.string "complaint_type"
-    t.string "descriptor"
   end
 
 end

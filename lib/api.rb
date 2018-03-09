@@ -61,7 +61,7 @@ class Api
           c = Complaint.find_or_create_by(complaint_type: i[:complaint_type])
           a = Address.find_or_create_by(incident_address:  i[:incident_address])
           # c = Descriptor.create(i.except(:incident_address,:incident_zip,:cross_street_1,:cross_street_2,:borough,:city,:location_type,:address_type,:street_name))
-          ComplaintAddress.create(address_id: a.id, complaint_id: c.id, i[:descriptor])
+          ComplaintAddress.create(address_id: a.id, complaint_id: c.id, descriptor: i[:descriptor])
 
 
         end

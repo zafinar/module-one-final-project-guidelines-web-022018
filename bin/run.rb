@@ -1,7 +1,6 @@
 require_relative '../config/environment.rb'
 require 'pry'
-api = Api.new
-api.create_join_table
+
 Cli.new
 
 # rake db:drop
@@ -39,5 +38,3 @@ Cli.new
 
 
 # binding.pry
-
-puts 'lol'
