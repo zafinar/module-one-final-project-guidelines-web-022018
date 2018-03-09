@@ -55,6 +55,21 @@ class Api
 
         end
       end
+
+      def create_join_table
+        join.each do |i|
+          c = Complaint.create(i.except(:incident_address,:incident_zip,:cross_street_1,:cross_street_2,:borough,:city,:location_type,:address_type,:street_name))
+          a = Address.find_or_create_by(incident_address:  i[:incident_address])
+          ComplaintAddress.create(address_id: a.id, complaint_id: c.id)
+
+
+        end
+
+      end
+
+
+
+
 end
 # api = Api.new.call
 
