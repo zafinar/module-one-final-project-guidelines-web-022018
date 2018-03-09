@@ -1,5 +1,5 @@
 # NYC 311 Calls Search
-  This is a cli interface app that takes addresses where 311 incidents have occurred in the nyc area and returns all incidents under an address. It also has the option of returning certain complaint types and where they occurred in new york city. 
+  This is a cli interface app that takes addresses where 311 incidents have occurred in the nyc area and returns all incidents under an address. It also has the option of returning certain complaint types and where they occurred in new york city.
 # Getting Started
 To start use this app you will need:
 1. Run the rake db:migrate terminal.
@@ -8,7 +8,7 @@ To start use this app you will need:
 4. After that you can text help to see what you can do on the app. :)
 ## Prerequisites
 You will need to instal the bundler install to be able use the app on your machine.
-Give examples
+
 ## Installing
 A step by step series of examples that tell you have to get a development env running
 1. After forking and cloning the app you will need to run bundler install on the terminal.
